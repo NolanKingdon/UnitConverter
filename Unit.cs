@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using UnitConverter.Units.Distance;
+using UnitConverter.Units.Mass;
 
 namespace UnitConverter
 {
@@ -56,7 +57,7 @@ namespace UnitConverter
                 case "meter":
                     newUnit = new Meter();
                     break;
-                case "cm":
+                case "cm": // Base for distance
                 case "centimeter":
                     newUnit = new Centimeter();
                     break;
@@ -84,8 +85,29 @@ namespace UnitConverter
                 case "planck":
                     newUnit = new Planck();
                     break;
+                case "au":
+                case "astronomicalUnit":
+                    newUnit = new AstronomicalUnit();
+                    break;
                 // Mass Cases
+                case "kgs":
+                case "kilogram":
+                    newUnit = new Kilogram();
+                    break;
+                case "lbs": // base for mass
+                case "pound":
+                    newUnit = new Pound();
+                    break;
+                case "tn":
+                case "ton": // lbs
+                    newUnit = new Ton();
+                    break;
+                case "tne":
+                case "tonne": // Metric
+                    newUnit = new Tonne();
+                    break;
                 default:
+                    throw new ArgumentException($"Invalid Argument Provided: {unit}");
                     newUnit = null;
                     break;
             }
