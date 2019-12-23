@@ -11,7 +11,6 @@ namespace UnitConverter.Units.Distance
         public Distance(double amount = 0.0)
             : base(amount)
         {
-          //  Console.WriteLine($"Distance constructor: {amount}");
         }
     }
 }
