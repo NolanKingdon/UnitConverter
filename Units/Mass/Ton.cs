@@ -11,22 +11,9 @@ namespace UnitConverter.Units.Mass
     /// </summary>
     class Ton : Mass
     {
-        private double conversionFactor = 2000;
         public Ton(double amount = 0.0) 
-            : base(amount)
+            : base(amount, 2000)
         {
-        }
-
-        public override Unit GetBase()
-        {
-            var baseAmount = base.Amount * conversionFactor;
-            return new Pound(baseAmount);
-        }
-
-        public override double GetConvertValue(double inBase)
-        {
-            double convertValue = inBase / conversionFactor;
-            return convertValue;
         }
     }
 }

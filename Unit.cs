@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using UnitConverter.Units.Distance;
 using UnitConverter.Units.Mass;
+using UnitConverter.Units.Speeds;
 
 namespace UnitConverter
 {
@@ -90,6 +91,11 @@ namespace UnitConverter
                 case "astronomicalUnit":
                     newUnit = new AstronomicalUnit();
                     break;
+                case "ly":
+                case "lightyear":
+                case "lightyears":
+                    newUnit = new Lightyear();
+                    break;
                 #endregion
                 #region mass
                 // Mass Cases
@@ -137,6 +143,16 @@ namespace UnitConverter
                 case "oz":
                 case "ounce":
                     newUnit = new Ounce();
+                    break;
+                #endregion
+                #region speed
+                case "kmh":
+                case "kilometers/h":
+                    newUnit = new KilometerPerHour();
+                    break;
+                case "mps": // Base
+                case "meters/s":
+                    newUnit = new MeterPerSecond();
                     break;
                 #endregion
                 default:
