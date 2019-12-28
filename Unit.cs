@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using UnitConverter.Units.Distance;
 using UnitConverter.Units.Mass;
 using UnitConverter.Units.Speeds;
+using UnitConverter.Units.Currency;
 
 namespace UnitConverter
 {
@@ -153,6 +154,12 @@ namespace UnitConverter
                 case "mps": // Base
                 case "meters/s":
                     newUnit = new MeterPerSecond();
+                    break;
+                #endregion
+                #region currency
+                case "currency":
+                    // TODO -> Fix this later
+                    newUnit = new Currency();
                     break;
                 #endregion
                 default:
