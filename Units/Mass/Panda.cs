@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace UnitConverter.Units.Mass
 {
     /// <summary>
-    ///  Metric Tonne
+    ///  Ton (2000lbs)
     /// </summary>
-    class Tonne : Mass
+    class Panda : Mass
     {
-        public Tonne(double amount = 0.0) 
-            : base(amount, 2204.62)
+        public Panda(double amount = 0.0) 
+            : base(amount, 236.99665)
         {
         }
     }

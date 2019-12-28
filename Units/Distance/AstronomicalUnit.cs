@@ -8,22 +8,9 @@ namespace UnitConverter.Units.Distance
 {
     class AstronomicalUnit: Distance
     {
-
         public AstronomicalUnit(double amount = 0.0)
-            : base(amount)
+            : base(amount, (1.496e+13))
         {
-        }
-
-        public override Unit GetBase()
-        {
-            var baseAmount = base.Amount * (1.496e+13);
-            return new Centimeter(baseAmount);
-        }
-
-        public override double GetConvertValue(double inBase)
-        {
-            double convertValue = inBase / (1.496e+13);
-            return convertValue;
         }
     }
 }

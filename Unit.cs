@@ -48,6 +48,7 @@ namespace UnitConverter
             Unit newUnit;
             switch (unit.ToLower())
             {
+                #region distance
                 // Distance Cases
                 case "km":
                 case "kilometer":
@@ -89,6 +90,8 @@ namespace UnitConverter
                 case "astronomicalUnit":
                     newUnit = new AstronomicalUnit();
                     break;
+                #endregion
+                #region mass
                 // Mass Cases
                 case "kgs":
                 case "kilogram":
@@ -106,9 +109,38 @@ namespace UnitConverter
                 case "tonne": // Metric
                     newUnit = new Tonne();
                     break;
+                case "corgs":
+                case "corgis":
+                case "ruby":
+                case "rubes":
+                    newUnit = new Corgi();
+                    break;
+                case "panda":
+                    newUnit = new Panda();
+                    break;
+                case "g":
+                case "gram":
+                    newUnit = new Gram();
+                    break;
+                case "ug":
+                case "microgram":
+                    newUnit = new Microgram();
+                    break;
+                case "mg":
+                case "milligram":
+                    newUnit = new Milligram();
+                    break;
+                case "st":
+                case "stone":
+                    newUnit = new Stone();
+                    break;
+                case "oz":
+                case "ounce":
+                    newUnit = new Ounce();
+                    break;
+                #endregion
                 default:
                     throw new ArgumentException($"Invalid Argument Provided: {unit}");
-                    newUnit = null;
                     break;
             }
             return newUnit;

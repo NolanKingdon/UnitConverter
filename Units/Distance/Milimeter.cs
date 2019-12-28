@@ -8,22 +8,9 @@ namespace UnitConverter.Units.Distance
 {
     class Milimeter: Distance
     {
-
         public Milimeter(double amount = 0.0)
-            : base(amount)
+            : base(amount, 0.1)
         {
-        }
-
-        public override Unit GetBase()
-        {
-            var baseAmount = base.Amount * 0.1;
-            return new Centimeter(baseAmount);
-        }
-
-        public override double GetConvertValue(double inBase)
-        {
-            double convertValue = inBase / 0.1;
-            return convertValue;
         }
     }
 }

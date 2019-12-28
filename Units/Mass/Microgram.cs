@@ -7,12 +7,12 @@ using System.Threading.Tasks;
 namespace UnitConverter.Units.Mass
 {
     /// <summary>
-    ///  Metric Tonne
+    ///  Ton (2000lbs)
     /// </summary>
-    class Tonne : Mass
+    class Microgram : Mass
     {
-        public Tonne(double amount = 0.0) 
-            : base(amount, 2204.62)
+        public Microgram(double amount = 0.0) 
+            : base(amount, (4.536e+8))
         {
         }
     }

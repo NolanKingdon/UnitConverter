@@ -8,22 +8,9 @@ namespace UnitConverter.Units.Distance
 {
     class Inch: Distance
     {
-
         public Inch(double amount = 0.0)
-            : base(amount)
+            : base(amount, 2.54)
         {
-        }
-
-        public override Unit GetBase()
-        {
-            var baseAmount = base.Amount * 2.54;
-            return new Centimeter(baseAmount);
-        }
-
-        public override double GetConvertValue(double inBase)
-        {
-            double convertValue = inBase / 2.54;
-            return convertValue;
         }
     }
 }

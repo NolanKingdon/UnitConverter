@@ -8,22 +8,11 @@ namespace UnitConverter.Units.Distance
 {
     class Foot: Distance
     {
+        private double conversionFactor = 30.48;
 
         public Foot(double amount = 0.0)
-            : base(amount)
+            : base(amount, 30.48)
         {
-        }
-
-        public override Unit GetBase()
-        {
-            var baseAmount = base.Amount * 30.48;
-            return new Centimeter(baseAmount);
-        }
-
-        public override double GetConvertValue(double inBase)
-        {
-            double convertValue = inBase / 30.48;
-            return convertValue;
         }
     }
 }

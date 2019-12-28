@@ -8,22 +8,9 @@ namespace UnitConverter.Units.Distance
 {
     class Yard: Distance
     {
-
         public Yard(double amount = 0.0)
-            : base(amount)
+            : base(amount, 91.44)
         {
-        }
-
-        public override Unit GetBase()
-        {
-            double baseAmount = base.Amount * 91.44;
-            return new Centimeter(baseAmount);
-        }
-
-        public override double GetConvertValue(double inBase)
-        {
-            double convertValue = inBase / 91.44;
-            return convertValue;
         }
     }
 }
