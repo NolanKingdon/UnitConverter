@@ -155,6 +155,18 @@ namespace UnitConverter
                 case "meters/s":
                     newUnit = new MeterPerSecond();
                     break;
+                case "fps":
+                case "foot/s":
+                    newUnit = new FootPerSecond();
+                    break;
+                case "mph":
+                case "miles/h":
+                    newUnit = new MilesPerHour();
+                    break;
+                case "kn":
+                case "knots":
+                    newUnit = new Knot();
+                    break;
                 #endregion
                 #region currency
                 case "currency":
@@ -164,7 +176,6 @@ namespace UnitConverter
                 #endregion
                 default:
                     throw new ArgumentException($"Invalid Argument Provided: {unit}");
-                    break;
             }
             return newUnit;
         }

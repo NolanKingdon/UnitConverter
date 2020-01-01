@@ -14,15 +14,17 @@ namespace UnitConverter.Units.Speeds
         {
             ConversionFactor = conversionFactor;
         }
+        
+        // For speed the conversion factor is reversed -> Divide instead of multiply and vice versa
         public override Unit GetBase()
         {
-            var baseAmount = base.Amount * ConversionFactor;
+            var baseAmount = base.Amount / ConversionFactor;
             return new MeterPerSecond(baseAmount);
         }
 
         public override double GetConvertValue(double inBase)
         {
-            double convertValue = inBase / ConversionFactor;
+            double convertValue = inBase * ConversionFactor;
             return convertValue;
         }
     }
