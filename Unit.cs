@@ -7,6 +7,7 @@ using UnitConverter.Units.Distance;
 using UnitConverter.Units.Mass;
 using UnitConverter.Units.Speeds;
 using UnitConverter.Units.Currency;
+using UnitConverter.Units.Temperature;
 
 namespace UnitConverter
 {
@@ -172,6 +173,20 @@ namespace UnitConverter
                 case "currency":
                     // TODO -> Fix this later
                     newUnit = new Currency();
+                    break;
+                #endregion
+                #region temperature
+                case "k":
+                case "kelvin": // base
+                    newUnit = new Kelvin();
+                    break;
+                case "c":
+                case "celcius":
+                    newUnit = new Celcius();
+                    break;
+                case "f":
+                case "fahrenheight":
+                    newUnit = new Fahrenheight();
                     break;
                 #endregion
                 default:
