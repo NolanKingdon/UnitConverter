@@ -26,15 +26,12 @@ namespace UnitConverter
                                     "ron", "rub", "sek", "sgd",
                                     "thb", "try", "usd", "zar"};
 
-            // Testing start
-            Console.WriteLine("First unit");
-            string first = Console.ReadLine();
-            Console.WriteLine("Second unit");
-            string second = Console.ReadLine();
-            Console.WriteLine("Amount");
-            string third = Console.ReadLine();
+            // Getting the values from the command line
+            string[] splitArgs = args[0].Split('-');
+            string first = splitArgs[0];
+            string second = splitArgs[1];
+            string third = args[1];
             double dt = double.Parse(third);
-            // Testing end -> will be replaced with args
 
             /**
              * Currency consumes from an API and it's structure
@@ -47,7 +44,6 @@ namespace UnitConverter
             {
                 try
                 {
-                    Console.WriteLine("Currency detected");
                     // Catching our Currency object
                     Currency currencyUnit = (Currency)Unit.Create("currency");
                     // Adding in the provided arguments in caps -> API doesn't accept lowercase
@@ -65,7 +61,6 @@ namespace UnitConverter
                 {
                     Console.WriteLine($"{e.Message}");
                 }
-                Console.ReadKey();
             } else
             {
                 // Attempting Conversion
@@ -87,8 +82,9 @@ namespace UnitConverter
                         // Assigning our output unit
                         outputUnit = baseableUnit.ConvertTo(outputUnit);
                     }
-                    Console.WriteLine($"{originalUnit.Amount}{first}");
-                    Console.WriteLine($"({baseUnit.Amount} in base)");
+                    // Add these in for potential future release
+                    //Console.WriteLine($"{originalUnit.Amount}{first}");
+                    //Console.WriteLine($"({baseUnit.Amount} in base)");
                     Console.WriteLine($"{outputUnit.Amount}{second}");
 
                 } catch (ArgumentException e) // Thrown if no unit exists with the name provided
@@ -99,9 +95,7 @@ namespace UnitConverter
                 {
                     Console.WriteLine($"Generic Error has occured: {e.Message}");
                 }
-                Console.ReadKey();
             }
-
         }
     }
 }
